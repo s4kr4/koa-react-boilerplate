@@ -1,24 +1,31 @@
 {
-  "name": "koa-example",
+  "name": "koa-react-boilerplate",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.18.0",
     "koa": "^2.5.0",
+    "koa-json": "^2.0.2",
     "koa-react-view": "^3.0.0",
     "koa-router": "^7.4.0",
-    "koa-static": "^4.0.2"
+    "koa-static": "^4.0.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "nodemon": "^1.17.2",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
     "webpack-dev-server": "^3.1.1"
   },
   "scripts": {
-    "start": "NODE_ENV=development nodemon server.js --exec babel-node --presets babel-preset-env"
+    "start": "NODE_ENV=development nodemon server.js --exec babel-node --presets babel-preset-env",
+    "watch": "webpack-dev-server",
+    "build": "webpack"
   }
 }

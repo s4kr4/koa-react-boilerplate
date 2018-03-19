@@ -1,10 +1,18 @@
 import Koa from 'koa'
 import Router from 'koa-router'
 import serve from 'koa-static'
+import json from 'koa-json'
+
+import apiRouter from './src/api/example'
 
 const app = new Koa()
 const router = new Router()
 
+router.use('/api', apiRouter.routes())
+
 app
-  .use(serve(__dirname + '/www'))
+  .use(router.routes())
+  .use(router.allowedMethods())
+  .use(json())
+  .use(serve(__dirname + '/app/dist'))
   .listen(3000)

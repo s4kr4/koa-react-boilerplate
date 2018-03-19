@@ -1,10 +1,11 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/www/javascripts/index.js',
+  mode: 'development',
+  entry: './app/src/javascripts/index.js',
   output: {
-    path: path.resolve(__dirname, 'www/javascripts'),
-    publicPath: 'javascripts/',
+    path: path.resolve(__dirname, 'app/dist'),
+    publicPath: '/',
     filename: 'bundle.js'
   },
   module: {
@@ -14,9 +15,13 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-          presets: ['babel-preset-env'],
+          presets: ['react', 'babel-preset-env'],
         }
       },
     ]
-  }
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'app/dist'),
+    open: true,
+  },
 }
