@@ -15,10 +15,18 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jsdom": "^11.6.2",
+    "mocha": "^5.0.4",
     "nodemon": "^1.17.2",
+    "sinon": "^4.4.6",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
     "webpack-dev-server": "^3.1.1"
@@ -26,6 +34,7 @@
   "scripts": {
     "start": "NODE_ENV=development nodemon server.js --exec babel-node --presets babel-preset-env",
     "watch": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "mocha --watch --require app/test/setup.js --require babel-register app/test/**/*.js"
   }
 }
