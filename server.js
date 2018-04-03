@@ -16,5 +16,5 @@ app
   .use(router.routes())
   .use(router.allowedMethods())
   .use(json())
-  .use(serve(__dirname + '/app/dist'))
+  .use(serve(__dirname + '/www'))
   .listen(port)
