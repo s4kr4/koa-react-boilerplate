@@ -4,7 +4,7 @@ const serverPort = process.env.PORT || 3000
 
 module.exports = {
   mode: 'development',
-  entry: './src/client/src/javascripts/index.js',
+  entry: './src/client/javascripts/index.js',
   output: {
     path: path.join(__dirname, '../../www'),
     publicPath: '/',
