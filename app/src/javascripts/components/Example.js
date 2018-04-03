@@ -11,9 +11,8 @@ export default class Example extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/example')
+    axios.get('/api/example')
       .then((res) => {
-        console.log(res.data);
         this.setState({
           data: res.data
         })
@@ -23,7 +22,7 @@ export default class Example extends React.Component {
   render() {
     return (
       <div className="example">
-        {this.state.data.example}
+        {this.state.data.foo}
       </div>
     )
   }
