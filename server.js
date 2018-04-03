@@ -5,6 +5,8 @@ import json from 'koa-json'
 
 import apiRouter from './src/api/example'
 
+const port = process.env.PORT || 3000
+
 const app = new Koa()
 const router = new Router()
 
@@ -15,4 +17,4 @@ app
   .use(router.allowedMethods())
   .use(json())
   .use(serve(__dirname + '/app/dist'))
-  .listen(3000)
+  .listen(port)

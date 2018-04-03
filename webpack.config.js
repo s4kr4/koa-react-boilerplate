@@ -1,5 +1,7 @@
 const path = require('path');
 
+const serverPort = process.env.PORT || 3000
+
 module.exports = {
   mode: 'development',
   entry: './app/src/javascripts/index.js',
@@ -23,5 +25,8 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, 'app/dist'),
     open: true,
+    proxy: {
+      '/api': `http://localhost:${serverPort}`,
+    },
   },
 }
