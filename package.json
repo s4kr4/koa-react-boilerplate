@@ -33,8 +33,8 @@
   },
   "scripts": {
     "start": "NODE_ENV=development nodemon server.js --exec babel-node --presets babel-preset-env",
-    "watch": "webpack-dev-server",
-    "build": "webpack",
-    "test": "mocha --watch --require app/test/setup.js --require babel-register app/test/**/*.js"
+    "watch": "webpack-dev-server --config src/client/webpack.config.js",
+    "build": "webpack --config src/client/webpack.config.js",
+    "test": "mocha --watch --require src/client/test/setup.js --require babel-register src/client/test/**/*.js"
   }
 }

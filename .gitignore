@@ -1,4 +1,4 @@
 node_modules
 yarn-error.log
 
-app/dist/bundle.js
+www/bundle.js

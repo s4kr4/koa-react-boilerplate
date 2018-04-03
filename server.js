@@ -3,7 +3,7 @@ import Router from 'koa-router'
 import serve from 'koa-static'
 import json from 'koa-json'
 
-import apiRouter from './src/api/example'
+import apiRouter from './src/server/api/example'
 
 const port = process.env.PORT || 3000
 

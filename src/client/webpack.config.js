@@ -4,9 +4,9 @@ const serverPort = process.env.PORT || 3000
 
 module.exports = {
   mode: 'development',
-  entry: './app/src/javascripts/index.js',
+  entry: './src/client/src/javascripts/index.js',
   output: {
-    path: path.resolve(__dirname, 'app/dist'),
+    path: path.join(__dirname, '../../www'),
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -23,7 +23,7 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'app/dist'),
+    contentBase: path.join(__dirname, '../../www'),
     open: true,
     proxy: {
       '/api': `http://localhost:${serverPort}`,
