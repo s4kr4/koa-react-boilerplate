@@ -17,6 +17,9 @@ export default class Example extends React.Component {
           data: res.data
         })
       })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   render() {
